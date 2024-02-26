@@ -1,0 +1,43 @@
+body{
+    background-color: #8800C7;
+}
+.container{
+    padding: 12px 10%;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.heading{ /*quiz head of main.html*/
+    text-align: center;
+    font-size: 53px;
+    margin: 10px 20px;
+}
+h3{
+    margin: 45px;
+    color: white;
+}
+h1{
+    font-size: 45px;
+    margin: 26px 25px;
+    color: white;
+}
+label{
+    font-size: 22px;
+    margin: 0px;
+    color: #f9bdf8;
+}
+input{
+    margin: 28px 26px 20px 40px;
+}
+button{
+    font-size: 18px;
+    border-radius: 15px;
+    width: 180px;
+    border: none;
+    margin: 40px 26px 20px 65px;
+    padding: 8px;
+    background-color: #A44CD3;
+    color: white;
+}

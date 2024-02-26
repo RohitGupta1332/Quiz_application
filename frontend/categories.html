@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="categories_style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Select Categories</h1>
+        <div>
+            <input type="checkbox" id="scienceCheckbox" value="Science">
+            <label for="scienceCheckbox">Science</label>
+        </div>
+        <div>
+            <input type="checkbox" id="technologyCheckbox" value="Technology">
+            <label for="technologyCheckbox">Technology</label>
+        </div>
+        <div>
+            <input type="checkbox" id="literatureCheckbox" value="Literature">
+            <label for="literatureCheckbox">Literature</label>
+        </div>
+        <div>
+            <input type="checkbox" id="sportsCheckbox" value="Sports">
+            <label for="sportsCheckbox">Sports</label>
+        </div>
+        <div>
+            <input type="checkbox" id="historyCheckbox" value="History">
+            <label for="historyCheckbox">History</label>
+        </div>
+        <div>
+            <input type="checkbox" id="geographyCheckbox" value="Geography">
+            <label for="geographyCheckbox">Geography</label>
+        </div>
+        <div>
+            <input type="checkbox" id="bollywoodCheckbox" value="Bollywood">
+            <label for="bollywoodCheckbox">Bollywood</label>
+        </div>
+        <div>
+            <input type="checkbox" id="mythologyCheckbox" value="Indian Mythology">
+            <label for="mythologyCheckbox">Mythology</label>
+        </div>
+        <button class="nextBtn" onclick="selectCategories()">Start Game</button>
+    </div>
+
+    <script>
+
+        async function selectCategories() {
+            let checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBoxes.length < 2) {
+                alert("Select atleast two categories");
+            }
+            else {
+                let selectedCategories = Array.from(checkedBoxes).map(checkBox => (checkBox.value));
+                await sendToBackend(selectedCategories);
+            }
+        }
+        async function sendToBackend(selectedCategories) {
+            try {
+                const response = await fetch('http://localhost:8080/categories', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ categories: selectedCategories }),
+                });
+                const data = await response.json();
+                console.log(data);
+                localStorage.setItem("data", JSON.stringify(data));
+                window.location.href = "main.html";
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+            }
+        }
+
+
+        const checkboxes = document.querySelectorAll('.container input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                const label = this.nextElementSibling;
+                if (this.checked) {
+                    label.style.color = 'white'; // Change this to the desired color
+                } else {
+                    label.style.color = ''; // Revert to default color
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
