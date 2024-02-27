@@ -1,56 +1,76 @@
 body{
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #8800C7;
+    background-color: #9C74F4;
+}
+#quiz{
+    width: 100%;
+    height: 50%;
+    border: none;
+    text-align: center;
+    border-bottom-left-radius: 90%;
+    border-bottom-right-radius: 90%;
+    /* background-color: #9C74F4; */
+    background-color: white;
+
 }
 .quiz-head{
     font-size: 50px;
-    color: white;
+    color: #9C74F4;
 }
 .head{
-    margin-top: 20px;
-    margin-bottom: 1px;
-    color: white;
+   margin: 25px 5px;
+    color: #9C74F4;
 }
 .container{
-    border: 1px solid black;
+    border: none;
     border-radius: 15px;
-    margin: 20px;
-    width: 25%;
+    margin: 40px 10px;
+    width: 30%;
     display: flex;
     align-items: center;
     min-width: 250px;
     flex-direction: column;
-    background-color: #A44CD3;
+    background-color: white;
 }
 .container form{
     padding: 14px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
 }
 .container .input{
     font-size: 16px;
-    margin: 10px 5px;
-    padding: 12px;
+    margin: 15px 5px;
+    padding: 15px;
     border-radius: 20px;
     width: 90%;
+    background-color: #9C74F4;
     border:hidden;
-    color: black;
+    color: white;
+
 }
 input::placeholder{
-    color: #A44CD3;
-}
-.container p{
-    margin: 5px 15px;
     color: white;
 }
+.container p{
+    margin: 10px 15px;
+    color: #3d05b5;
+}
 .submit{
-    margin: 15px 0px;
+    margin: 20px 0px;
     width: 30%;
     padding: 5px;
     font-size: 20px;
     border-radius: 15px;
     border: none;
     color: white;
-    background-color: #8800C7;
+    background-color: #9C74F4;
+}
+a:hover{
+    color: rgb(107, 28, 28);
 }

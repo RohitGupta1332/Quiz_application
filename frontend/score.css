@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #9C74F4;
+}
+.fa-solid{
+    font-size: 90px;
+}
+.container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border: none;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+}
+.container h1{
+    font-size: 35px;
+
+}
+button {
+    width: 150px;
+    padding: 8px;
+    border-radius: 20px;
+    margin: 10px;
+    font-size: 18px;
+    background-color: #8800C7;
+    color: white;
+    border: none;
+}

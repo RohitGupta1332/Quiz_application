@@ -9,53 +9,18 @@
 </head>
 
 <body>
-    <h1 class="quiz-head">Quiz Master</h1>
+    <div id="quiz"><h1 class="quiz-head">Quiz Master</h1></div>
     <div class="container">
         <h1 class="head">Register</h1>
-        <div class="form">
-            <form onsubmit="event.preventDefault(); send()">
-                <input class="input" type="email" name="email" placeholder="Enter Email Id">
-                <input class="input" type="text" name="name" placeholder="Enter Full Name">
-                <input class="input" type="password" name="password" placeholder="Password">
-                <input class="submit" type="submit" value="submit">
+        <form onsubmit="event.preventDefault(); send()">
+            <input class="input" type="email" name="email" placeholder="Enter Email Id">
+            <input class="input" type="text" name="name" placeholder="Enter Full Name">
+            <input class="input" type="password" name="password" placeholder="Password">
+            <input class="submit" type="submit" value="submit">
 
-            </form>
-        </div>
+        </form>
     </div>
-    <script>
-        async function send() {
-            let email = document.querySelector('input[name="email"]').value;
-            let name = document.querySelector('input[name="name"]').value;
-            let password = document.querySelector('input[name="password"]').value;
-            const user = {
-                "email": email,
-                "name": name,
-                "password": password
-            };
-            try {
-                let response = await fetch('http://localhost:8080/save', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(user ),
-                });
-                if(response.status === 200){
-                    window.location.href='categories.html';
-                }
-                else{
-                    alert("This email already exists or something went wrong!");
-                    window.location.href='sign_up.html';
-
-                }
-               
-            }
-            catch (error) {
-                console.log(error);
-            }
-        }
-        
-    </script>
+    <script src="register.js"></script>
 </body>
 
 </html>

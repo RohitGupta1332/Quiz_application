@@ -5,46 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #8800C7;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-            border: 2px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #A44CD3;
-            color: white;
-        }
-        .container h1{
-            font-size: 40px;
-
-        }
-        button {
-            width: 150px;
-            padding: 8px;
-            border-radius: 20px;
-            margin: 10px;
-            font-size: 18px;
-            background-color: #8800C7;
-            color: white;
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="score.css">
 </head>
 
 <body>
     <div class="container">
+        <i class="fa-solid fa-trophy"></i>
         <h1 class="message"></h1>
         <h1 class="displayScore"></h1>
         <button>Play Again</button>
@@ -54,10 +21,16 @@
     let score = parseInt(localStorage.getItem("quizResult"));
     let message = document.querySelector(".message");
     if (score > 7) {
+        document.querySelector('.fa-solid').style.color = "gold";
         message.innerText = "Great job! You're a quiz master!";
     }
-    else {
+    else if (score > 4){
+        document.querySelector('.fa-solid').style.color = "silver";
         message.innerText = "Keep practicing! You'll get better!";
+    }
+    else{
+        document.querySelector('.fa-solid').style.color = "brown";
+        message.innerText = "Oops! Keep practicing and you'll see progress!";
     }
     document.querySelector(".displayScore").innerText = "Your score: " + score;
 
